@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tangled App Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif; 
+
+        }
+
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+       
+        .mobile-container {
+             width: 375px; 
+            background-color: #bce0f0; 
+            border-radius: 20px;
+             overflow: hidden;
+             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+       
+        header {
+            background-color: #eadd75; 
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            font-size: 24px;
+            color: #2c3e50;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #1f4e68; 
+            font-size: 48px;
+            font-weight: bold;
+            z-index: 2;
+            position: relative;
+        }
+
+       
+        .search-nav {
+            background-color: #bce0f0;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #888;
+        }
+
+        .user-icons {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+            color: #1f4e68;
+        }
+
+       
+        .content-grid {
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+      
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .col-half {
+            width: 50%;
+        }
+
+        .col-full {
+            width: 100%;
+        }
+
+
+
+
+        .card {
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+          display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+         width: 100%;
+        height: 100%;
+            object-fit: cover;
+                opacity: 0.3; 
+            z-index: 0;
+        }
+
+        .card-text {
+            position: relative;
+            z-index: 1; 
+            color: #1f4e68;
+            font-size: 22px;
+         font-weight: normal;
+            font-style: italic;
+            padding: 10px;
+        }
+
+       
+        .bg-yellow { background-color: #fcf6ba; height: 140px; }
+        .bg-blue-light { background-color: #dbeff8; height: 120px; }
+        .bg-teal-dark { background-color: #335c6e; height: 140px; }
+        .bg-pink { background-color: #dcbab7; height: 60px; }
+
+       
+        .bg-teal-dark .card-text {
+            color: #ffffff; 
+        font-style: normal;
+        }
+
+       
+
+        .shop-icon {
+            font-size: 40px;
+            color: white;
+           border: 3px solid white;
+        border-radius: 15px;
+            padding: 15px;
+            z-index: 2;
+        }
+        .tutoring-text {
+            font-size: 16px;
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #294d5d;
+         color: white;
+            padding: 20px;
+           left: auto;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            
+          margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <header>
+            <img src="" class="header-bg" alt=""> <div class="back-btn"><i class="fa-solid fa-arrow-left"></i></div>
+            <h1>Tangled</h1>
+        </header>
+
+        <div class="search-nav">
+            <div class="search-box">
+                  <span></span>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+                 <div class="user-icons">
+                <i class="fa-regular fa-user"></i>
+               <i class="fa-solid fa-comments"></i> <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            
+            <div class="row">
+                <div class="col-half card bg-yellow">
+                    <img src="https://cdn11.bigcommerce.com/s-xsywvop/images/stencil/1280x1280/products/743/4239/main_original__61284.1754610146.jpg?c=2" class="card-img" alt=""> <div class="card-text">Beginner<br>patterns</div>
+                </div>
+                <div class="col-half card bg-yellow">
+                    <img src="https://hobbii.se/cdn/shop/files/friends-wool-1-1-picture-sylwia--products6.jpg?crop=center&height=557&v=1769769096&width=557" class="card-img" alt=""> <div class="card-text">Advanced<br>patterns</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-full card bg-blue-light">
+                    <img src="https://content.instructables.com/FTY/PUDK/IDQHN2EG/FTYPUDKIDQHN2EG.jpg?auto=webp&fit=bounds&frame=1" class="card-img" alt=""> <div class="card-text" style="font-size: 28px;">Video tutorials</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-half card bg-teal-dark">
+                    <img src="" class="card-img" alt=""> <div class="card-text">Post<br>your<br>work!</div>
+                </div>
+                <div class="col-half card bg-teal-dark">
+                    <img src="" class="card-img" alt=""> <i class="fa-solid fa-bag-shopping shop-icon"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-full card bg-pink">
+                    <img src="" class="card-img" alt=""> <div class="tutoring-text card-text">Book your online tutoring now!</div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer-title">Follow us on:</div>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-snapchat"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitch"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
